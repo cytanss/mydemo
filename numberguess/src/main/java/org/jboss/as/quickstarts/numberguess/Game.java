@@ -129,6 +129,7 @@ public class Game implements Serializable {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Correct!"));
         }
         remainingGuesses--;
+	System.out.println("Number guessed is === "+guess);
     }
 
     /**
