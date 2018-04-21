@@ -27,6 +27,7 @@ import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.logging.Logger;
 
 /**
  * <p>
@@ -49,6 +50,9 @@ import javax.inject.Named;
 @Named
 @SessionScoped
 public class Game implements Serializable {
+
+    @Inject
+private Logger log;
 
     /**
      * The number that the user needs to guess
@@ -129,7 +133,7 @@ public class Game implements Serializable {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Correct!"));
         }
         remainingGuesses--;
-	System.out.println("Number guessed is === "+guess);
+log.info("Number keyed in === " + guess);
     }
 
     /**
